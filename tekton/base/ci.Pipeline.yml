@@ -1,0 +1,33 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: ci-pipeline
+spec:
+  workspaces:
+    - name: shared
+  params:
+    - name: source-repo
+      type: string
+    - name: image-repo
+      type: string
+  tasks:
+    - name: fetch-repository
+      taskRef:
+        name: git-clone
+        kind: ClusterTask
+      workspaces:
+        - name: output
+          workspace: shared
+      params:
+        - name: url
+          value: $(params.source-repo)
+    - name: buildah
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      params:
+        - name: IMAGE
+          value: $(params.image-repo):$(tasks.fetch-repository.results.commit)
+      workspaces:
+        - name: source
+          workspace: shared
