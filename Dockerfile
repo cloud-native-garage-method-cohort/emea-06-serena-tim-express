@@ -1,4 +1,4 @@
-FROM quay.io/upslopeio/node-alpine
+FROM quay.io/ibmgaragecloud/node
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
