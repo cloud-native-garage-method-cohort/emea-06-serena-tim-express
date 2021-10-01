@@ -1,4 +1,4 @@
-FROM quay.io/ibmgaragecloud/node
+FROM quay.io/ibmgaragecloud/node:lts-stretch
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
