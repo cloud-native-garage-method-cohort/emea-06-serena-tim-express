@@ -18,6 +18,7 @@ spec:
           - name: source-repo
             value: https://github.com/cloud-native-garage-method-cohort/emea-06-serena-tim-express
           - name: image-repo
+            # Change this to your image
             value: quay.io/tim_walter_ibm/emea-06-kustomize
         workspaces:
           - name: shared
