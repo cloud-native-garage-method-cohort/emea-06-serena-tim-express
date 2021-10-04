@@ -13,8 +13,6 @@ spec:
       value: https://github.com/cloud-native-garage-method-cohort/emea-06-serena-tim-express
     - name: image-repo
       value: quay.io/serenaflocco/buildah-assignment
-    - name: manifest
-      value: k8s/manifest.yaml
   workspaces:
     - name: shared
       volumeClaimTemplate:
