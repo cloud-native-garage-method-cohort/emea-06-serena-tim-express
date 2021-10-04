@@ -13,8 +13,6 @@ spec:
     - name: app-name
       type: string
       description: Application name
-    - name: manifest
-      type: string
   tasks:
     - name: fetch-repository
       taskRef:
@@ -62,7 +60,7 @@ spec:
         - name: app-namespace
           value: "$(context.pipelineRun.namespace)"
         - name: manifest
-          value: "$(tasks.create-configuration.results.manifest.path)"
+          value: "$(tasks.create-configuration.results.manifest)"
       runAfter:
         - create-configuration
       taskRef:

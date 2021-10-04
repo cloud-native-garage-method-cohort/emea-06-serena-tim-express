@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: express-deployment
-  labels:
-    app: express-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: express-app
+      pp.kubernetes.io/instance: app-instance
+      app.kubernetes.io/name: app
   template:
     metadata:
       labels:
-        app: express-app
+        app.kubernetes.io/instance: app-instance
+        app.kubernetes.io/name: app
     spec:
       containers:
       - name: express-app

@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: express-service
 spec:
+  type: ClusterIP
   selector:
-    app: express-app
+    app.kubernetes.io/instance: app-instance
+    app.kubernetes.io/name: app
   ports:
     - protocol: TCP
       port: 3000
