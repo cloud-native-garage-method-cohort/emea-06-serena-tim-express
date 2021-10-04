@@ -63,7 +63,7 @@ spec:
           exit 1
         fi
     - name: manifest-to-results
-      image: quay.io/serenaflocco/buildah-assignment
+      image: quay.io/upslopeio/kustomize:latest
       script: |
         echo -n "k8s/manifest.yaml" > $(results.manifest.path)
   workspaces:
