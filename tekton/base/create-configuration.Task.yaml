@@ -19,7 +19,7 @@ spec:
       description: The path to the yaml file
   steps:
     - name: create-manifest
-      image: quay.io/serenaflocco/buildah-assignment
+      image: quay.io/upslopeio/kustomize:latest
       script: |
         #!/bin/sh
         set -e
