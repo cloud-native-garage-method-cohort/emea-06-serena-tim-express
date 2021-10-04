@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: express-app
-        image: quay.io/serenaflocco/buildah-assignment
+        image: quay.io/serenaflocco/buildah-assignment:8577e57db577b36c101f06f41e4d4821154354b2
         ports:
         - containerPort: 3000
