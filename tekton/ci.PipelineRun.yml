@@ -7,10 +7,14 @@ spec:
     name: ci-pipeline
   serviceAccountName: build-bot
   params:
+    - name: app-name
+      value: express-app
     - name: source-repo
       value: https://github.com/cloud-native-garage-method-cohort/emea-06-serena-tim-express
     - name: image-repo
-      value: quay.io/tim_walter_ibm/emea-06-buildah
+      value: quay.io/serenaflocco/buildah-assignment
+    - name: manifest
+      value: k8s/manifest.yaml
   workspaces:
     - name: shared
       volumeClaimTemplate:
